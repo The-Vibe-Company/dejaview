@@ -268,15 +268,26 @@ This keeps DéjàView easy to inspect, back up, sync, or delete. The JSON backen
 
 ```bash
 npm install
-npm run build
 npm test
+npm run build
 ```
 
-Run the local server after building:
+## Releases
 
-```bash
-node dist/index.js
+DéjàView uses Release Please, like Granite-style infrastructure: humans and agents land conventional commits on `main`, Release Please opens or updates a release PR, and merging that PR creates the GitHub release and publishes the package to npm.
+
+Required repository secret:
+
+```text
+NPM_TOKEN
 ```
+
+Release flow:
+
+1. Commit with Conventional Commits, e.g. `feat: add source aliases` or `fix: retry failed actions`.
+2. The `Release Please` workflow opens/updates the release PR.
+3. Merge the release PR.
+4. GitHub Actions runs tests and publishes to npm with provenance.
 
 ## MVP status
 
