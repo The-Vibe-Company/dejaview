@@ -1,0 +1,53 @@
+{
+  "name": "dejaview",
+  "version": "0.1.0",
+  "description": "Local-first MCP source-processing ledger for agents.",
+  "type": "module",
+  "bin": {
+    "dejaview": "dist/index.js"
+  },
+  "files": [
+    "dist/index.js",
+    "dist/index.d.ts",
+    "dist/ledger.js",
+    "dist/ledger.d.ts",
+    "dist/types.js",
+    "dist/types.d.ts",
+    "README.md",
+    "LICENSE"
+  ],
+  "scripts": {
+    "build": "tsc -p tsconfig.json",
+    "test": "npm run build && node --test dist/**/*.test.js",
+    "prepublishOnly": "npm run test"
+  },
+  "keywords": [
+    "mcp",
+    "agent",
+    "ledger",
+    "provenance",
+    "source-processing",
+    "local-first"
+  ],
+  "author": "The Vibe Company",
+  "license": "MIT",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/The-Vibe-Company/dejaview.git"
+  },
+  "bugs": {
+    "url": "https://github.com/The-Vibe-Company/dejaview/issues"
+  },
+  "homepage": "https://github.com/The-Vibe-Company/dejaview#readme",
+  "engines": {
+    "node": ">=20"
+  },
+  "dependencies": {
+    "@modelcontextprotocol/sdk": "^1.18.2",
+    "zod": "^3.25.76"
+  },
+  "devDependencies": {
+    "@types/node": "^24.10.1",
+    "typescript": "^5.9.3"
+  }
+}
